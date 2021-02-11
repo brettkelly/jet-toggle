@@ -1,0 +1,11 @@
+.jt-toggle-container .jt-content {
+    display:none; 
+}
+.jt-toggle-container .jt-content:first-child {
+    display:block;
+}
+
+.jt-toggle-contrainer .jt-content-active {
+    display:block;
+}
+
