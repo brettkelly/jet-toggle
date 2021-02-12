@@ -1,9 +1,10 @@
 
 // hide all content elements on load except the first
 const containerSelector = '.jt-toggle-container';
+const buttonSelector = '.jt-button';
+const activeClass = '.jt-content-active';
 
 function hideAllContentElements(parent, showFirst) {
-    const activeClass = '.jt-content-active';
     let selector = ':scope .jt-content';
     if(showFirst) {
         selector += ':not(:first-child)';
@@ -35,7 +36,11 @@ function onButtonClick(event) {
     let container = event.target.closest(containerSelector);
     if(container) {
         hideAllContentElements(container, false);
-         
+        let pid = getPostIdFromClassList(event.target);
+        if(pid) {
+            let selector = ':scope .jt-content-'+pid;
+            container.querySelector(selector).classList.add(activeClass);
+        }
     } else {
         console.log('onButtonClick container not found');
     }
@@ -48,6 +53,13 @@ document.addEventListener('DOMContentLoaded',
         containers.forEach(
             function(element) {
                 hideAllContentElements(element, true); 
+            }
+        );
+        // add click listener to all buttons
+        let buttons = document.querySelectorAll(buttonSelector);
+        buttons.forEach(
+            function(element) {
+                element.addEventListener('click',onButtonClick);
             }
         );
 
