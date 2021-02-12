@@ -26,7 +26,7 @@ Your layout will have two corresponding listing grids: buttons and content. Appl
 
 In the button Listing, set the CSS classes to dynamic using the Post ID. Using the "before" area, assign:
 
-`.jt-button .jt-button-`
+`jt-button jt-button-`
 
 Assuming your post ID is 123, the end result is that your button will have these classes:
 
@@ -34,11 +34,11 @@ Assuming your post ID is 123, the end result is that your button will have these
 
 Do exactly the same thing in your content Listing. Set CSS classes to dynamic with Post ID and the "before" field to:
 
-`.jt-content .jt-content-`
+`jt-content jt-content-`
 
 Resulting in your content container having these classes:
 
-`jt-content .jt-content-123`
+`jt-content jt-content-123`
 
 ### Cool thing
 

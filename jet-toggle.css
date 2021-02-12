@@ -1,14 +1,17 @@
-.jt-toggle-container .jt-content {
-    display:none; 
+.jt-content {
+    position:absolute;
+    visibility:hidden;
+    opacity:0;
+    transition:visibility 0s, opacity 0.5s linear;
+    /*display:none; */
 }
-.jt-toggle-container .jt-content:first-child {
-    display:block;
-}
-
-.jt-toggle-contrainer .jt-content-active {
-    display:block;
+.jt-content.jt-content-active {
+    /*display:block;*/
+    visibility:visible;
+    position:relative;
+    opacity:1;
+    transition:visibility 0s, opacity 0.5s linear;
 }
 .jt-button {
     cursor:pointer;
 }
-
