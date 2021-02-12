@@ -1,4 +1,4 @@
-## A simple vanilla JS thingie for making toggle-able elements using JetEnging Listings.
+## A simple vanilla JS thingie for making toggle-able elements using JetEngine Listings.
 
 ### This will be of use to almost nobody.
 
