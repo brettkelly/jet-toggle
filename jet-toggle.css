@@ -8,4 +8,7 @@
 .jt-toggle-contrainer .jt-content-active {
     display:block;
 }
+.jt-button {
+    cursor:pointer;
+}
 
