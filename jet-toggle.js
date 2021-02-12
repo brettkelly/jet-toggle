@@ -36,7 +36,6 @@ function hideAllContentElements(parent, showFirst) {
 function getPostIdFromClassList(element) {
     let retid = null;
     element.classList.forEach(name => {
-        console.log("Current class name: " + name);
         if(buttonClassPattern.test(name)){
             let parts = name.split("-");
             //return parts[parts.length -1];
@@ -46,7 +45,6 @@ function getPostIdFromClassList(element) {
     if(retid){
         return retid;
     }
-    console.log("No Post ID found");
     return false;
 }
 
@@ -56,8 +54,6 @@ function getPostIdFromClassList(element) {
 function onButtonClick(event) {
     // hide all content elements
     let container = event.target.closest(containerSelector);
-    console.log('Container');
-    console.log(container);
     if(container) {
         hideAllContentElements(container, false);
         let pid = getPostIdFromClassList(event.target.closest(buttonSelector));
@@ -65,8 +61,6 @@ function onButtonClick(event) {
             let selector = ":scope .jt-content-"+pid;
             container.querySelector(selector).classList.add(activeClass);
         }
-    } else {
-        console.log("onButtonClick container not found");
     }
 }
 
